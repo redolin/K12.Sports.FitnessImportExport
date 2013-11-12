@@ -45,7 +45,7 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(47, 50);
+            this.labelX1.Location = new System.Drawing.Point(77, 48);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(56, 23);
             this.labelX1.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.integerInput1.BackgroundStyle.Class = "DateTimeInputBackground";
             this.integerInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.integerInput1.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.integerInput1.Location = new System.Drawing.Point(109, 50);
+            this.integerInput1.Location = new System.Drawing.Point(139, 48);
             this.integerInput1.Name = "integerInput1";
             this.integerInput1.ShowUpDown = true;
             this.integerInput1.Size = new System.Drawing.Size(80, 25);
@@ -114,7 +114,7 @@
             // 
             this.ckExportDegree.BackgroundStyle.Class = "";
             this.ckExportDegree.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ckExportDegree.Location = new System.Drawing.Point(109, 81);
+            this.ckExportDegree.Location = new System.Drawing.Point(12, 81);
             this.ckExportDegree.Name = "ckExportDegree";
             this.ckExportDegree.Size = new System.Drawing.Size(114, 23);
             this.ckExportDegree.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
