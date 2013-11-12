@@ -11,7 +11,7 @@ namespace K12.Sports.FitnessImportExport.DAO
     /// 學生體適能UDT, 把"學生系統編號"/"學年度"/"測驗日期"當作Key
     /// </summary>
     [TableName("ischool_student_fitness")]
-    class StudentFitnessRecord : ActiveRecord
+    public class StudentFitnessRecord : ActiveRecord
     {
         /// <summary>
         ///  學生系統編號

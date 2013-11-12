@@ -71,6 +71,10 @@
       <HintPath>..\..\..\..\..\..\..\ischool desktop\kernel\FISCA.DSAUtil.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="FISCA.LogAgent">
+      <HintPath>..\..\..\..\..\..\..\ischool desktop\kernel\FISCA.LogAgent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="FISCA.Permission">
       <HintPath>..\..\..\..\..\..\..\ischool desktop\kernel\FISCA.Permission.dll</HintPath>
       <Private>False</Private>
@@ -106,6 +110,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FrmFitnessRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFitnessRecord.Designer.cs">
+      <DependentUpon>FrmFitnessRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportExport\ExportStudentFitness.cs" />
     <Compile Include="ImportExport\FrmFitnessExport.cs">
       <SubType>Form</SubType>
@@ -136,6 +146,8 @@
       <DependentUpon>StudentFitnessContent.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Log\LogTransfer.cs" />
+    <Compile Include="Log\LogValue.cs" />
     <Compile Include="Permissions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +161,9 @@
     <Compile Include="ValidationRule\RowValidator\StudCheckStudentNumberVal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmFitnessRecord.resx">
+      <DependentUpon>FrmFitnessRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportExport\FrmFitnessExport.resx">
       <DependentUpon>FrmFitnessExport.cs</DependentUpon>
     </EmbeddedResource>

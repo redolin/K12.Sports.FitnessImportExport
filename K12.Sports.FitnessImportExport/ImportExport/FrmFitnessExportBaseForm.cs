@@ -22,6 +22,7 @@ namespace K12.Sports.FitnessImportExport.ImportExport
         private int _RowIndex = 0;
         private readonly int _MAX_ROW_COUNT = 65535;
         private readonly int _START_ROW = 16;
+        private bool _ExportDegree = false;
 
         public FrmFitnessExportBaseForm()
         {
@@ -43,6 +44,7 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             this.btnExport.Enabled = false;
 
             _SchoolYear = integerInput1.Value;
+            _ExportDegree = ckExportDegree.Checked;
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "另存新檔";
@@ -76,12 +78,6 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             // 取得學生的基本資料
             List<StudentRecord> studentRecords = K12.Data.Student.SelectByIDs(studentIDList);
 
-            // 取得班級ID
-            List<string> classIDList = GetClassID(studentRecords);
-
-            // 取得班級資料
-            List<ClassRecord> classRecords = K12.Data.Class.SelectByIDs(classIDList);
-
             // 取得學生的體適能資料
             List<DAO.StudentFitnessRecord> FitnessRecords = DAO.StudentFitness.SelectByStudentIDListAndSchoolYear(studentIDList, _SchoolYear);
             #endregion
@@ -93,30 +89,25 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             // 學生
             foreach (StudentRecord student in studentRecords)
             {
-                if (student.Status != StudentRecord.StudentStatus.一般)
-                    // 假如學生非一般生, 就不處理
-                    continue;
-                
-                // 班級
-                foreach (ClassRecord aClass in classRecords)
+                // 假如學生非一般生, 就不處理
+                if (student.Status != StudentRecord.StudentStatus.一般) continue;
+
+                foreach (DAO.StudentFitnessRecord fitnessRecord in FitnessRecords)
                 {
-                    if (student.RefClassID == aClass.ID)
+                    if (fitnessRecord.StudentID == student.ID)
                     {
-                        // 體適能
-                        foreach (DAO.StudentFitnessRecord fitnessRecord in FitnessRecords)
-                        {
-                            if (fitnessRecord.StudentID == student.ID)
-                            {
-                                // 設定輸出的欄位
-                                ExcelRowRecord rec = new ExcelRowRecord(Global._ExcelDataTitle);
-                                rec.SetDataForExport(aClass, student, fitnessRecord);
-                                excelRowRecords.Add(rec);
-                                break;
-                            }
-                        }
+                        // 設定輸出的欄位
+                        ExcelRowRecord rec;
+                        if (_ExportDegree == false)
+                            rec = new ExcelRowRecord(Global._ExcelDataTitle);
+                        else
+                            rec = new ExcelRowRecord(Global._ExcelDataDegreeTitle);
+                        rec.SetDataForExport(student.Class, student, fitnessRecord, _ExportDegree);
+                        excelRowRecords.Add(rec);
                         break;
-                    }   // end of if (student.RefClassID == aClass.ID)
-                }   // end of foreach (ClassRecord aClass in classRecords)
+                    }
+                }
+
             }   // end of foreach (StudentRecord student in studentRecords)
 
             #endregion
@@ -132,6 +123,16 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             Worksheet sheet = report.Worksheets[0];
             sheet.Name = Global._SheetName;
 
+            if(_ExportDegree == true)
+            {
+                int rowIndex = _START_ROW-1;
+                int colIndex = 0;
+                foreach (string columnName in excelRowRecords[0]._Columns)
+                {
+                    sheet.Cells[rowIndex, colIndex++].PutValue(columnName);
+                }
+            }
+
             _RowIndex = _START_ROW;
             //填入資料
             foreach (ExcelRowRecord excelRowRecord in excelRowRecords)
@@ -144,12 +145,6 @@ namespace K12.Sports.FitnessImportExport.ImportExport
                 SetDataDetail(sheet, excelRowRecord);
                 _RowIndex++;
             }
-
-            // 設定欄位寬度
-            //for(int columnIndex=0; columnIndex<Global._ExcelDataTitle.Length; columnIndex++)
-            //{
-            //    sheet.AutoFitColumn(columnIndex, _START_ROW, _START_ROW+excelRowRecords.Count);
-            //}
 
             // 儲存結果
             e.Result = new object[] { report, fileName, _RowIndex > _MAX_ROW_COUNT };
@@ -241,18 +236,13 @@ namespace K12.Sports.FitnessImportExport.ImportExport
         private void SetDataDetail(Worksheet sheet, ExcelRowRecord rec)
         {
             int columnIndex = 0;
-            foreach (string columnName in Global._ExcelDataTitle)
+            foreach (string columnName in rec._Columns)
             {
                 sheet.Cells[_RowIndex, columnIndex++].PutValue(rec.GetColumnValue(columnName));
             }
         }
 
         #endregion
-
-        private List<string> GetClassID(List<StudentRecord> studentList)
-        {
-            return studentList.Select(x => x.RefClassID).ToList();
-        }
 
         #region 排序的方法
 
@@ -371,22 +361,27 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             /// <param name="classRecord"></param>
             /// <param name="studentRecord"></param>
             /// <param name="fitnessRecord"></param>
-            public void SetDataForExport(ClassRecord classRecord, StudentRecord studentRecord, DAO.StudentFitnessRecord fitnessRecord)
+            public void SetDataForExport(ClassRecord classRecord, StudentRecord studentRecord, DAO.StudentFitnessRecord fitnessRecord, bool isExportDegree)
             {
-                
                 
                 // 測驗日期
                 SetColumnValue("測驗日期", Utility.ConvertDateTimeToChineseDateTime(fitnessRecord.TestDate));
 
                 // 學校類別
                 SetColumnValue("學校類別", fitnessRecord.SchoolCategory);
-                
-                // 年級
-                if (classRecord.GradeYear.HasValue)
-                    SetColumnValue("年級", classRecord.GradeYear.Value.ToString());
 
-                // 班級名稱
-                SetColumnValue("班級名稱", classRecord.Name);
+                if (classRecord != null)
+                {
+                    // 年級
+                    if (classRecord.GradeYear.HasValue)
+                        SetColumnValue("年級", classRecord.GradeYear.Value.ToString());
+
+                    // 班級名稱
+                    SetColumnValue("班級名稱", classRecord.Name);
+
+                    // 班級序號 for sort
+                    SetOthersValue("班級序號", classRecord.DisplayOrder);
+                }
 
                 // 學號/座號
                 SetColumnValue("學號/座號", studentRecord.StudentNumber);
@@ -419,13 +414,32 @@ namespace K12.Sports.FitnessImportExport.ImportExport
                 SetColumnValue("心肺適能", fitnessRecord.Cardiorespiratory);
 
 
-                // 班級序號 for sort
-                SetOthersValue("班級序號", classRecord.DisplayOrder);
-
                 // 姓名 for sort
                 SetOthersValue("姓名", studentRecord.Name);
+
+                if(isExportDegree == true)
+                {
+                    // 身高常模
+                    SetColumnValue("身高常模", fitnessRecord.HeightDegree);
+
+                    // 體重常模
+                    SetColumnValue("體重常模", fitnessRecord.WeightDegree);
+
+                    // 坐姿體前彎常模
+                    SetColumnValue("坐姿體前彎常模", fitnessRecord.SitAndReachDegree);
+
+                    // 立定跳遠常模
+                    SetColumnValue("立定跳遠常模", fitnessRecord.StandingLongJumpDegree);
+
+                    // 仰臥起坐常模
+                    SetColumnValue("仰臥起坐常模", fitnessRecord.SitUpDegree);
+
+                    // 心肺適能常模
+                    SetColumnValue("心肺適能常模", fitnessRecord.CardiorespiratoryDegree);
+                }
             }
         }
         #endregion
+
     }
 }

@@ -33,6 +33,7 @@
             this.btnExport = new DevComponents.DotNetBar.ButtonX();
             this.btnClose = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.ckExportDegree = new DevComponents.DotNetBar.Controls.CheckBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,9 +45,9 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(161, 53);
+            this.labelX1.Location = new System.Drawing.Point(47, 50);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.Size = new System.Drawing.Size(56, 23);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "學年度";
             // 
@@ -59,7 +60,7 @@
             this.integerInput1.BackgroundStyle.Class = "DateTimeInputBackground";
             this.integerInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.integerInput1.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.integerInput1.Location = new System.Drawing.Point(75, 51);
+            this.integerInput1.Location = new System.Drawing.Point(109, 50);
             this.integerInput1.Name = "integerInput1";
             this.integerInput1.ShowUpDown = true;
             this.integerInput1.Size = new System.Drawing.Size(80, 25);
@@ -70,7 +71,7 @@
             this.btnExport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExport.BackColor = System.Drawing.Color.Transparent;
             this.btnExport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExport.Location = new System.Drawing.Point(161, 102);
+            this.btnExport.Location = new System.Drawing.Point(161, 110);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -83,7 +84,7 @@
             this.btnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClose.Location = new System.Drawing.Point(242, 102);
+            this.btnClose.Location = new System.Drawing.Point(242, 110);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -105,11 +106,27 @@
             this.labelX2.TabIndex = 4;
             this.labelX2.Text = "匯出體適能";
             // 
+            // ckExportDegree
+            // 
+            this.ckExportDegree.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.ckExportDegree.BackgroundStyle.Class = "";
+            this.ckExportDegree.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ckExportDegree.Location = new System.Drawing.Point(109, 81);
+            this.ckExportDegree.Name = "ckExportDegree";
+            this.ckExportDegree.Size = new System.Drawing.Size(114, 23);
+            this.ckExportDegree.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ckExportDegree.TabIndex = 5;
+            this.ckExportDegree.Text = "包括常模資料";
+            // 
             // FrmFitnessExportBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 137);
+            this.ClientSize = new System.Drawing.Size(329, 145);
+            this.Controls.Add(this.ckExportDegree);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExport);
@@ -131,5 +148,6 @@
         private DevComponents.DotNetBar.ButtonX btnExport;
         private DevComponents.DotNetBar.ButtonX btnClose;
         private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.Controls.CheckBoxX ckExportDegree;
     }
 }

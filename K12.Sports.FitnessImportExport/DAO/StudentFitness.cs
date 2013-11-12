@@ -38,6 +38,21 @@ namespace K12.Sports.FitnessImportExport.DAO
         }
 
         /// <summary>
+        /// 新增學生體適能
+        /// </summary>
+        /// <param name="DataList"></param>
+        public static void InsertByRecord(StudentFitnessRecord rec)
+        {
+            if (rec != null)
+            {
+                List<StudentFitnessRecord> insertList = new List<StudentFitnessRecord>();
+                insertList.Add(rec);
+                AccessHelper accessHelper = new AccessHelper();
+                accessHelper.InsertValues(insertList);
+            }
+        }
+
+        /// <summary>
         /// 更新學生體適能
         /// </summary>
         /// <param name="DataList"></param>
@@ -47,6 +62,21 @@ namespace K12.Sports.FitnessImportExport.DAO
             {
                 AccessHelper accessHelper = new AccessHelper();
                 accessHelper.UpdateValues(DataList);
+            }
+        }
+
+        /// <summary>
+        /// 更新學生體適能
+        /// </summary>
+        /// <param name="DataList"></param>
+        public static void UpdateByRecord(StudentFitnessRecord rec)
+        {
+            if (rec != null)
+            {
+                List<StudentFitnessRecord> updateList = new List<StudentFitnessRecord>();
+                updateList.Add(rec);
+                AccessHelper accessHelper = new AccessHelper();
+                accessHelper.UpdateValues(updateList);
             }
         }
 
@@ -65,6 +95,50 @@ namespace K12.Sports.FitnessImportExport.DAO
                 string query = "ref_student_id in ('" + string.Join("','", StudentIDList.ToArray()) + "')";
                 dataList = accessHelper.Select<StudentFitnessRecord>(query);
             }
+            return dataList;
+        }
+
+        /// <summary>
+        /// 依學生ID 取得學生體適能資料
+        /// </summary>
+        /// <param name="StudentID"></param>
+        /// <returns></returns>
+        public static List<StudentFitnessRecord> SelectByStudentID(string StudentID)
+        {
+            List<StudentFitnessRecord> dataList = new List<StudentFitnessRecord>();
+            if(string.IsNullOrEmpty(StudentID))
+                return dataList;
+
+            AccessHelper accessHelper = new AccessHelper();
+            // 當有 Where 條件寫法
+            string query = "ref_student_id = '" + StudentID + "'";
+            dataList = accessHelper.Select<StudentFitnessRecord>(query);
+
+            if(dataList == null)
+                return new List<StudentFitnessRecord>();
+
+            return dataList;
+        }
+
+        /// <summary>
+        /// 依學生ID 以及學年度 取得學生體適能資料
+        /// </summary>
+        /// <param name="StudentID"></param>
+        /// <returns></returns>
+        public static List<StudentFitnessRecord> SelectByStudentIDAndSchoolYear(string StudentID, int SchoolYear)
+        {
+            List<StudentFitnessRecord> dataList = new List<StudentFitnessRecord>();
+            if (string.IsNullOrEmpty(StudentID))
+                return dataList;
+
+            AccessHelper accessHelper = new AccessHelper();
+            // 當有 Where 條件寫法
+            string query = "ref_student_id = '" + StudentID + "' and school_year=" + SchoolYear;
+            dataList = accessHelper.Select<StudentFitnessRecord>(query);
+
+            if (dataList == null)
+                return new List<StudentFitnessRecord>();
+
             return dataList;
         }
 
@@ -121,6 +195,25 @@ namespace K12.Sports.FitnessImportExport.DAO
                 }
                 AccessHelper accessHelper = new AccessHelper();
                 accessHelper.DeletedValues(DataList);
+            }
+        }
+
+        /// <summary>
+        /// 刪除學生體適能資料
+        /// </summary>
+        /// <param name="rec"></param>
+        public static void DeleteByRecord(StudentFitnessRecord rec)
+        {
+            if (rec != null)
+            {
+                // Deleted 設成 true 才會真刪除
+                rec.Deleted = true;
+
+                List<StudentFitnessRecord> recList = new List<StudentFitnessRecord>();
+                recList.Add(rec);
+
+                AccessHelper accessHelper = new AccessHelper();
+                accessHelper.DeletedValues(recList);
             }
         }
     }

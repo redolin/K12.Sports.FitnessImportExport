@@ -174,5 +174,39 @@ namespace K12.Sports.FitnessImportExport
                 return "";
             }
         }
+
+        public static void SetLogData(Log.LogTransfer logTransfer, DAO.StudentFitnessRecord rec)
+        {
+            // 學年度
+            logTransfer.SetLogValue("學年度", rec.SchoolYear.ToString());
+            // 測驗日期
+            logTransfer.SetLogValue("測驗日期", rec.TestDate.ToShortDateString());
+            // 學校類別
+            logTransfer.SetLogValue("學校類別", rec.SchoolCategory);
+            // 身高
+            logTransfer.SetLogValue("身高", rec.Height);
+            // 身高常模
+            logTransfer.SetLogValue("身高常模", rec.HeightDegree);
+            // 體重
+            logTransfer.SetLogValue("體重", rec.Weight);
+            // 體重常模
+            logTransfer.SetLogValue("體重常模", rec.WeightDegree);
+            // 坐姿體前彎
+            logTransfer.SetLogValue("坐姿體前彎", rec.SitAndReach);
+            // 坐姿體前彎常模
+            logTransfer.SetLogValue("坐姿體前彎常模", rec.SitAndReachDegree);
+            // 立定跳遠
+            logTransfer.SetLogValue("立定跳遠", rec.StandingLongJump);
+            // 立定跳遠常模
+            logTransfer.SetLogValue("立定跳遠常模", rec.StandingLongJumpDegree);
+            // 仰臥起坐
+            logTransfer.SetLogValue("仰臥起坐", rec.SitUp);
+            // 仰臥起坐常模
+            logTransfer.SetLogValue("仰臥起坐常模", rec.SitUpDegree);
+            // 心肺適能
+            logTransfer.SetLogValue("心肺適能", rec.Cardiorespiratory);
+            // 心肺適能常模
+            logTransfer.SetLogValue("心肺適能常模", rec.CardiorespiratoryDegree);
+        }
     }
 }

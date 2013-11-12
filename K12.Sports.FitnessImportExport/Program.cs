@@ -27,11 +27,11 @@ namespace K12.Sports.FitnessImportExport
             K12.Presentation.NLDPanels.Student.AddDetailBulider<DetailContents.StudentFitnessContent>();
 
             // 加入"匯出體適能"按鈕
-            FISCA.Presentation.MenuButton btnImport = NLDPanels.Student.RibbonBarItems["體適能"]["匯出相關"]["匯出體適能"];
+            FISCA.Presentation.MenuButton btnExport = NLDPanels.Student.RibbonBarItems["體適能"]["匯出相關"]["匯出體適能"];
             // 設定權限
-            btnImport.Enable = Permissions.IsEnableFitnessExport;
+            btnExport.Enable = Permissions.IsEnableFitnessExport;
             // 設定動作
-            btnImport.Click += delegate
+            btnExport.Click += delegate
             {
                 //SmartSchool.API.PlugIn.Export.Exporter exporter = new Actions.ExportStudentFitness();
                 //Actions.FrmFitnessExport wizard = new Actions.FrmFitnessExport(exporter.Text, exporter.Image);
@@ -49,11 +49,11 @@ namespace K12.Sports.FitnessImportExport
             };
 
             // 加入"匯入體適能"按鈕
-            FISCA.Presentation.MenuButton btnExport = NLDPanels.Student.RibbonBarItems["體適能"]["匯入相關"]["匯入體適能"];
+            FISCA.Presentation.MenuButton btnImport = NLDPanels.Student.RibbonBarItems["體適能"]["匯入相關"]["匯入體適能"];
             // 設定權限
-            btnExport.Enable = Permissions.IsEnableFitnessImport;
+            btnImport.Enable = Permissions.IsEnableFitnessImport;
             // 設定動作
-            btnExport.Click += delegate
+            btnImport.Click += delegate
             {
                 // 準備所有一般生的學生ID, 之後驗證資料時會用到
                 Global._AllStudentNumberIDTemp = DAO.FDQuery.GetAllStudenNumberDict();

@@ -211,6 +211,16 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             if (_UpdateRecList.Count > 0)
                 DAO.StudentFitness.UpdateByRecordList(_UpdateRecList);
 
+            // Log
+            Log.LogTransfer logTransfer = new Log.LogTransfer();
+            StringBuilder logData = new StringBuilder();
+            int insertCnt = _InsertRecList.Count; 
+            int updateCnt = _UpdateRecList.Count;
+            logData.Append("總共匯入").Append((insertCnt + updateCnt)).Append("筆,");
+            logData.Append("新增:").Append(insertCnt).Append("筆,");
+            logData.Append("更新:").Append(updateCnt).Append("筆");
+            logTransfer.SaveLog("學生.體適能-匯入", "匯入", "student", "", logData);
+
             return "";
         }
 
