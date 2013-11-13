@@ -31,6 +31,20 @@ namespace K12.Sports.FitnessImportExport.DetailContents
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += new DoWorkEventHandler(_bgWorker_DoWork);
             _bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(_bgWorker_RunWorkerCompleted);
+
+            // 判斷權限
+            if(Permissions.IsExecutableFitnessContent)
+            {
+                this.btnDelete.Enabled = true;
+                this.btnInsert.Enabled = true;
+                this.btnUpdate.Enabled = true;
+            }
+            else
+            {
+                this.btnDelete.Enabled = false;
+                this.btnInsert.Enabled = false;
+                this.btnUpdate.Enabled = false;
+            }
         }
 
         // 切換學生時

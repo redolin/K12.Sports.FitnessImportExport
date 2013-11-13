@@ -27,11 +27,19 @@ namespace K12.Sports.FitnessImportExport
             }
         }
 
-        public static bool IsEnableFitnessContent
+        public static bool IsExecutableFitnessContent
         {
             get
             {
                 return FISCA.Permission.UserAcl.Current[KeyFitnessContent].Executable;
+            }
+        }
+
+        public static bool IsViewableFitnessContent
+        {
+            get
+            {
+                return FISCA.Permission.UserAcl.Current[KeyFitnessContent].Viewable;
             }
         }
     }
