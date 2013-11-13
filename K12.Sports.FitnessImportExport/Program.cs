@@ -26,8 +26,12 @@ namespace K12.Sports.FitnessImportExport
             // 把"體適能資料"加入資料項目
             K12.Presentation.NLDPanels.Student.AddDetailBulider<DetailContents.StudentFitnessContent>();
 
+            // 加入"匯出"按鈕以及圖示
+            NLDPanels.Student.RibbonBarItems["體適能"]["匯出"].Image = Properties.Resources.Export_Image;
+            NLDPanels.Student.RibbonBarItems["體適能"]["匯出"].Size = FISCA.Presentation.RibbonBarButton.MenuButtonSize.Large;
+
             // 加入"匯出體適能"按鈕
-            FISCA.Presentation.MenuButton btnExport = NLDPanels.Student.RibbonBarItems["體適能"]["匯出相關"]["匯出體適能"];
+            FISCA.Presentation.MenuButton btnExport = NLDPanels.Student.RibbonBarItems["體適能"]["匯出"]["匯出體適能"];
             // 設定權限
             btnExport.Enable = Permissions.IsEnableFitnessExport;
             // 設定動作
@@ -48,8 +52,12 @@ namespace K12.Sports.FitnessImportExport
                 }
             };
 
+            // 加入"匯出"按鈕以及圖示
+            NLDPanels.Student.RibbonBarItems["體適能"]["匯入"].Image = Properties.Resources.Import_Image;
+            NLDPanels.Student.RibbonBarItems["體適能"]["匯入"].Size = FISCA.Presentation.RibbonBarButton.MenuButtonSize.Large;
+
             // 加入"匯入體適能"按鈕
-            FISCA.Presentation.MenuButton btnImport = NLDPanels.Student.RibbonBarItems["體適能"]["匯入相關"]["匯入體適能"];
+            FISCA.Presentation.MenuButton btnImport = NLDPanels.Student.RibbonBarItems["體適能"]["匯入"]["匯入體適能"];
             // 設定權限
             btnImport.Enable = Permissions.IsEnableFitnessImport;
             // 設定動作
