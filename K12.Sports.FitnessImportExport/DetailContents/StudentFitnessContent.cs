@@ -33,7 +33,7 @@ namespace K12.Sports.FitnessImportExport.DetailContents
             _bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(_bgWorker_RunWorkerCompleted);
 
             // 判斷權限
-            if(Permissions.IsExecutableFitnessContent)
+            if(Permissions.IsEditableFitnessContent == true)
             {
                 this.btnDelete.Enabled = true;
                 this.btnInsert.Enabled = true;
