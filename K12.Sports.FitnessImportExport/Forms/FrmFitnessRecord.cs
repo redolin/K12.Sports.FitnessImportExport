@@ -18,6 +18,9 @@ namespace K12.Sports.FitnessImportExport.Forms
         DAO.StudentFitnessRecord _fitnessRec;
         accessType _actType;
         Log.LogTransfer _LogTransfer;
+        readonly string _FrmTitleAdd = "體適能資料新增";
+        readonly string _FrmTitleEdit = "體適能資料修改";
+
 
         public FrmFitnessRecord(DAO.StudentFitnessRecord rec, accessType actType)
         {
@@ -27,6 +30,11 @@ namespace K12.Sports.FitnessImportExport.Forms
             _fitnessRec = rec;
             _actType = actType;
             _LogTransfer = new Log.LogTransfer();
+
+            if(_actType == accessType.Edit)
+                this.TitleText = _FrmTitleEdit;
+            else
+                this.TitleText = _FrmTitleAdd;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

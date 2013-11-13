@@ -1,6 +1,5 @@
 C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\bin\Debug\K12.Sports.FitnessImportExport.dll
 C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\bin\Debug\K12.Sports.FitnessImportExport.pdb
-C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\obj\Debug\K12.Sports.FitnessImportExport.csprojResolveAssemblyReference.cache
 C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\obj\Debug\K12.Sports.FitnessImportExport.Forms.FrmFitnessRecord.resources
 C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\obj\Debug\K12.Sports.FitnessImportExport.ImportExport.FrmFitnessExport.resources
 C:\Dropbox\00-Work\iSchool\SourceCode\MyProjects\K12.Sports.FitnessImportExport\K12.Sports.FitnessImportExport\obj\Debug\K12.Sports.FitnessImportExport.ImportExport.FrmFitnessExportBaseForm.resources
