@@ -102,7 +102,6 @@ namespace K12.Sports.FitnessImportExport.ImportExport
                         // 設定每個欄位的值
                         rec.SetDataForExport(student, fitnessRecord, ExportDegree);
                         excelRowRecords.Add(rec);
-                        break;
                     }
                 }
 
