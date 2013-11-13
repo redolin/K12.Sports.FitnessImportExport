@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\StudentInfo.cs" />
     <Compile Include="Forms\FrmFitnessRecord.cs">
       <SubType>Form</SubType>
     </Compile>

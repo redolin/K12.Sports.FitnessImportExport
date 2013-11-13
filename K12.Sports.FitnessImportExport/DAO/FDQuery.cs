@@ -57,5 +57,34 @@ namespace K12.Sports.FitnessImportExport.DAO
             return retVal;
         }
 
+
+        public static List<StudentInfo> GetStudnetInfoByIDList(List<string> StudIdList)
+        {
+            List<StudentInfo> result = new List<StudentInfo>();
+            QueryHelper qh = new QueryHelper();
+            StringBuilder sbQry = new StringBuilder();
+            sbQry.Append("'"); sbQry.Append(string.Join("','", StudIdList.ToArray())); sbQry.Append("'");
+            string strSQL = "select student.id," +
+		                            "student.student_number," +
+		                            "student.gender," +
+		                            "student.id_number," +
+		                            "student.birthdate," +
+		                            "class.grade_year," +
+		                            "class.class_name," +
+                                "student.name," +       // for sort
+                                "class.display_order" + // for sort
+                            " from student" +
+                            " left join class on student.ref_class_id = class.id" +
+                            " where student.id in(" + sbQry.ToString() + ") and student.status='1';";
+            DataTable dt = qh.Select(strSQL);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                StudentInfo studentInfo = new StudentInfo(dr);
+                result.Add(studentInfo);
+            }
+
+            return result;
+        }
     }
 }

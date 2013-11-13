@@ -137,12 +137,12 @@ namespace K12.Sports.FitnessImportExport
         public static string ConvertDBGenderToOutGender(string strDbGender)
         {
             // 男
-            if(strDbGender == "男")
+            if(strDbGender == "1")
             {
                 return "1";
             }
             //女
-            else if (strDbGender == "女")
+            else if (strDbGender == "0")
             {
                 return "2";
             }

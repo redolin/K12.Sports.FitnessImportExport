@@ -83,7 +83,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 16;
             this.btnSave.Text = "儲存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -96,7 +96,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClose.TabIndex = 1;
+            this.btnClose.TabIndex = 17;
             this.btnClose.Text = "取消";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -124,7 +124,7 @@
             this.txtHeight.Location = new System.Drawing.Point(112, 128);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(69, 25);
-            this.txtHeight.TabIndex = 3;
+            this.txtHeight.TabIndex = 4;
             // 
             // labelX1
             // 
@@ -150,7 +150,7 @@
             this.txtHeightDegree.Location = new System.Drawing.Point(327, 128);
             this.txtHeightDegree.Name = "txtHeightDegree";
             this.txtHeightDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtHeightDegree.TabIndex = 3;
+            this.txtHeightDegree.TabIndex = 5;
             // 
             // labelX2
             // 
@@ -176,7 +176,7 @@
             this.txtWeight.Location = new System.Drawing.Point(112, 157);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(69, 25);
-            this.txtWeight.TabIndex = 3;
+            this.txtWeight.TabIndex = 6;
             // 
             // labelX3
             // 
@@ -202,7 +202,7 @@
             this.txtWeightDegree.Location = new System.Drawing.Point(327, 157);
             this.txtWeightDegree.Name = "txtWeightDegree";
             this.txtWeightDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtWeightDegree.TabIndex = 3;
+            this.txtWeightDegree.TabIndex = 7;
             // 
             // labelX4
             // 
@@ -228,7 +228,7 @@
             this.txtSitAndReach.Location = new System.Drawing.Point(112, 186);
             this.txtSitAndReach.Name = "txtSitAndReach";
             this.txtSitAndReach.Size = new System.Drawing.Size(69, 25);
-            this.txtSitAndReach.TabIndex = 3;
+            this.txtSitAndReach.TabIndex = 8;
             // 
             // labelX5
             // 
@@ -254,7 +254,7 @@
             this.txtSitAndReachDegree.Location = new System.Drawing.Point(327, 186);
             this.txtSitAndReachDegree.Name = "txtSitAndReachDegree";
             this.txtSitAndReachDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtSitAndReachDegree.TabIndex = 3;
+            this.txtSitAndReachDegree.TabIndex = 9;
             // 
             // labelX6
             // 
@@ -280,7 +280,7 @@
             this.txtStandingLongJump.Location = new System.Drawing.Point(112, 215);
             this.txtStandingLongJump.Name = "txtStandingLongJump";
             this.txtStandingLongJump.Size = new System.Drawing.Size(69, 25);
-            this.txtStandingLongJump.TabIndex = 3;
+            this.txtStandingLongJump.TabIndex = 10;
             // 
             // labelX7
             // 
@@ -306,7 +306,7 @@
             this.txtStandingLongJumpDegree.Location = new System.Drawing.Point(327, 215);
             this.txtStandingLongJumpDegree.Name = "txtStandingLongJumpDegree";
             this.txtStandingLongJumpDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtStandingLongJumpDegree.TabIndex = 3;
+            this.txtStandingLongJumpDegree.TabIndex = 11;
             // 
             // labelX10
             // 
@@ -346,7 +346,7 @@
             this.txtSitUp.Location = new System.Drawing.Point(112, 244);
             this.txtSitUp.Name = "txtSitUp";
             this.txtSitUp.Size = new System.Drawing.Size(69, 25);
-            this.txtSitUp.TabIndex = 3;
+            this.txtSitUp.TabIndex = 12;
             // 
             // labelX9
             // 
@@ -384,7 +384,7 @@
             this.txtSitUpDegree.Location = new System.Drawing.Point(327, 244);
             this.txtSitUpDegree.Name = "txtSitUpDegree";
             this.txtSitUpDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtSitUpDegree.TabIndex = 3;
+            this.txtSitUpDegree.TabIndex = 13;
             // 
             // labelX11
             // 
@@ -410,7 +410,7 @@
             this.txtCardiorespiratory.Location = new System.Drawing.Point(112, 273);
             this.txtCardiorespiratory.Name = "txtCardiorespiratory";
             this.txtCardiorespiratory.Size = new System.Drawing.Size(69, 25);
-            this.txtCardiorespiratory.TabIndex = 3;
+            this.txtCardiorespiratory.TabIndex = 14;
             // 
             // labelX12
             // 
@@ -448,7 +448,7 @@
             this.txtCardiorespiratoryDegree.Location = new System.Drawing.Point(327, 273);
             this.txtCardiorespiratoryDegree.Name = "txtCardiorespiratoryDegree";
             this.txtCardiorespiratoryDegree.Size = new System.Drawing.Size(100, 25);
-            this.txtCardiorespiratoryDegree.TabIndex = 3;
+            this.txtCardiorespiratoryDegree.TabIndex = 15;
             // 
             // lbClassGradeYear
             // 
@@ -584,7 +584,7 @@
             this.dateTimeInput1.Name = "dateTimeInput1";
             this.dateTimeInput1.Size = new System.Drawing.Size(200, 25);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 11;
+            this.dateTimeInput1.TabIndex = 2;
             // 
             // lbSemester
             // 
@@ -613,7 +613,7 @@
             this.integerInput1.Name = "integerInput1";
             this.integerInput1.ShowUpDown = true;
             this.integerInput1.Size = new System.Drawing.Size(80, 25);
-            this.integerInput1.TabIndex = 13;
+            this.integerInput1.TabIndex = 1;
             // 
             // labelX16
             // 
@@ -720,7 +720,6 @@
             this.Controls.Add(this.lbHeight);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.DoubleBuffered = true;
             this.Name = "FrmFitnessRecord";
             this.Text = "體適能資料新增/修改";
             this.Load += new System.EventHandler(this.FrmFitnessRecord_Load);
