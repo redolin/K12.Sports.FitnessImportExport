@@ -46,6 +46,7 @@
             this.btnInsert = new DevComponents.DotNetBar.ButtonX();
             this.btnUpdate = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
+            this.colSchoolCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvFitnessList
@@ -58,6 +59,7 @@
             this.lvFitnessList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSemester,
             this.colTestDate,
+            this.colSchoolCategory,
             this.colHeight,
             this.colHeightDegree,
             this.colWeight,
@@ -80,68 +82,88 @@
             // 
             // colSemester
             // 
+            this.colSemester.DisplayIndex = 0;
             this.colSemester.Text = "學年度";
             // 
             // colTestDate
             // 
+            this.colTestDate.DisplayIndex = 1;
             this.colTestDate.Text = "測驗日期";
             this.colTestDate.Width = 75;
             // 
+            // colSchoolCategory
+            // 
+            this.colSchoolCategory.DisplayIndex = 2;
+            this.colSchoolCategory.Text = "學校類別";
+            this.colSchoolCategory.Width = 75;
+            // 
             // colHeight
             // 
+            this.colHeight.DisplayIndex = 3;
             this.colHeight.Text = "身高";
             // 
             // colHeightDegree
             // 
+            this.colHeightDegree.DisplayIndex = 4;
             this.colHeightDegree.Text = "身高常模";
             this.colHeightDegree.Width = 75;
             // 
             // colWeight
             // 
+            this.colWeight.DisplayIndex = 5;
             this.colWeight.Text = "體重";
             // 
             // colWeightDegree
             // 
+            this.colWeightDegree.DisplayIndex = 6;
             this.colWeightDegree.Text = "體重常模";
             this.colWeightDegree.Width = 75;
             // 
             // colSitAndReach
             // 
+            this.colSitAndReach.DisplayIndex = 7;
             this.colSitAndReach.Text = "坐姿體前彎";
             this.colSitAndReach.Width = 90;
             // 
             // colSitAndReachDegree
             // 
+            this.colSitAndReachDegree.DisplayIndex = 8;
             this.colSitAndReachDegree.Text = "坐姿體前彎常模";
             this.colSitAndReachDegree.Width = 120;
             // 
             // colStandingLongJump
             // 
+            this.colStandingLongJump.DisplayIndex = 9;
             this.colStandingLongJump.Text = "立定跳遠";
             this.colStandingLongJump.Width = 75;
             // 
             // colStandingLongJumpDegree
             // 
+            this.colStandingLongJumpDegree.DisplayIndex = 10;
             this.colStandingLongJumpDegree.Text = "立定跳遠常模";
             this.colStandingLongJumpDegree.Width = 100;
             // 
             // colSitUp
             // 
+            this.colSitUp.DisplayIndex = 11;
             this.colSitUp.Text = "仰臥起坐";
             this.colSitUp.Width = 75;
             // 
             // colSitUpDegree
             // 
+            this.colSitUpDegree.DisplayIndex = 12;
             this.colSitUpDegree.Text = "仰臥起坐常模";
             this.colSitUpDegree.Width = 100;
             // 
             // colCardiorespiratory
             // 
+            this.colCardiorespiratory.DisplayIndex = 13;
             this.colCardiorespiratory.Text = "心肺適能";
             this.colCardiorespiratory.Width = 75;
             // 
             // colCardiorespiratoryDegree
             // 
+            this.colCardiorespiratoryDegree.DisplayIndex = 14;
             this.colCardiorespiratoryDegree.Text = "心肺適能常模";
             this.colCardiorespiratoryDegree.Width = 100;
             // 
@@ -215,5 +237,6 @@
         private System.Windows.Forms.ColumnHeader colSitUpDegree;
         private System.Windows.Forms.ColumnHeader colCardiorespiratory;
         private System.Windows.Forms.ColumnHeader colCardiorespiratoryDegree;
+        private System.Windows.Forms.ColumnHeader colSchoolCategory;
     }
 }

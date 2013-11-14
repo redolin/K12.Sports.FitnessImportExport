@@ -164,6 +164,8 @@ namespace K12.Sports.FitnessImportExport.DetailContents
             item.Text = rec.SchoolYear.ToString();
             // 測驗日期
             item.SubItems.Add(rec.TestDate.ToShortDateString());
+            // 學校類別
+            item.SubItems.Add(rec.SchoolCategory);
             // 身高
             item.SubItems.Add(rec.Height);
             // 身高常模

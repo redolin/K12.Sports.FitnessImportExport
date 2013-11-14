@@ -117,24 +117,11 @@
     <Compile Include="Forms\FrmFitnessRecord.Designer.cs">
       <DependentUpon>FrmFitnessRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportExport\ExportStudentFitness.cs" />
-    <Compile Include="ImportExport\FrmFitnessExport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportExport\FrmFitnessExport.Designer.cs">
-      <DependentUpon>FrmFitnessExport.cs</DependentUpon>
-    </Compile>
     <Compile Include="ImportExport\FrmFitnessExportBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ImportExport\FrmFitnessExportBaseForm.Designer.cs">
       <DependentUpon>FrmFitnessExportBaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportExport\FrmFitnessImportBaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportExport\FrmFitnessImportBaseForm.Designer.cs">
-      <DependentUpon>FrmFitnessImportBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportExport\ImportStudentFitness.cs" />
     <Compile Include="DAO\FDQuery.cs" />
@@ -165,14 +152,8 @@
     <EmbeddedResource Include="Forms\FrmFitnessRecord.resx">
       <DependentUpon>FrmFitnessRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportExport\FrmFitnessExport.resx">
-      <DependentUpon>FrmFitnessExport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ImportExport\FrmFitnessExportBaseForm.resx">
       <DependentUpon>FrmFitnessExportBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportExport\FrmFitnessImportBaseForm.resx">
-      <DependentUpon>FrmFitnessImportBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailContents\StudentFitnessContent.resx">
       <DependentUpon>StudentFitnessContent.cs</DependentUpon>
