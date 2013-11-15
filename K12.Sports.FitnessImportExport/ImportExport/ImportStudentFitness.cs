@@ -51,7 +51,7 @@ namespace K12.Sports.FitnessImportExport.ImportExport
             Dictionary<string, string> SchoolYearDic = new Dictionary<string, string>();
             foreach (IRowStream row in Rows)
             {
-                string StudentNumber = Utility.GetIRowValueString(row, "學號/座號");
+                string StudentNumber = Utility.GetIRowValueString(row, "學號");
                 string SchoolYear = Utility.GetIRowValueString(row, "學年度");
                 
                 if (string.IsNullOrEmpty(StudentNumber)) continue;
@@ -79,11 +79,11 @@ namespace K12.Sports.FitnessImportExport.ImportExport
                 this.ImportProgress = totalCount;
                 bool isInsert = true;   // 用來判斷此筆資料是否要新增
                 DAO.StudentFitnessRecord fitnessRec = new DAO.StudentFitnessRecord();
-                string StudentNumber = Utility.GetIRowValueString(row, "學號/座號");
+                string StudentNumber = Utility.GetIRowValueString(row, "學號");
                 int? SchoolYear = Utility.GetIRowValueInt(row, "學年度");
                 DateTime? TestDate = Utility.GetIRowValueDateTime(row, "測驗日期");
 
-                // 如果"學號/座號"或"學年度"或"測驗日期"沒有資料, 換到下一筆
+                // 如果"學號"或"學年度"或"測驗日期"沒有資料, 換到下一筆
                 if(string.IsNullOrEmpty(StudentNumber)) continue;
                 if(!SchoolYear.HasValue) continue;
                 if(!TestDate.HasValue) continue;

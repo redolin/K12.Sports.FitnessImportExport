@@ -398,7 +398,7 @@
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(95, 23);
             this.labelX11.TabIndex = 2;
-            this.labelX11.Text = "心肺適能常模";
+            this.labelX11.Text = "心肺適能";
             // 
             // txtCardiorespiratory
             // 
@@ -424,7 +424,7 @@
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(104, 23);
             this.labelX12.TabIndex = 2;
-            this.labelX12.Text = "身高常模";
+            this.labelX12.Text = "心肺適能常模";
             // 
             // textBoxX13
             // 
@@ -462,7 +462,6 @@
             this.lbClassGradeYear.Name = "lbClassGradeYear";
             this.lbClassGradeYear.Size = new System.Drawing.Size(44, 23);
             this.lbClassGradeYear.TabIndex = 5;
-            this.lbClassGradeYear.Text = "3";
             // 
             // labelX13
             // 
@@ -504,7 +503,6 @@
             this.lbStudentName.Name = "lbStudentName";
             this.lbStudentName.Size = new System.Drawing.Size(91, 23);
             this.lbStudentName.TabIndex = 8;
-            this.lbStudentName.Text = "王曉明";
             // 
             // lbClassName
             // 
@@ -518,7 +516,6 @@
             this.lbClassName.Name = "lbClassName";
             this.lbClassName.Size = new System.Drawing.Size(105, 23);
             this.lbClassName.TabIndex = 9;
-            this.lbClassName.Text = "訊三忠";
             // 
             // lbTestDate
             // 
@@ -720,6 +717,7 @@
             this.Controls.Add(this.lbHeight);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
+            this.DoubleBuffered = true;
             this.Name = "FrmFitnessRecord";
             this.Text = "體適能資料新增/修改";
             this.Load += new System.EventHandler(this.FrmFitnessRecord_Load);

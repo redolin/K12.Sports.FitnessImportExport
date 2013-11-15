@@ -23,7 +23,7 @@ namespace K12.Sports.FitnessImportExport.ValidationRule.RowValidator
         public bool Validate(IRowStream row)
         {
             bool retVal = false;
-            string key = Utility.GetIRowValueString(row, "學號/座號");
+            string key = Utility.GetIRowValueString(row, "學號");
 
             if (Global._AllStudentNumberIDTemp.ContainsKey(key))
                 retVal = true;

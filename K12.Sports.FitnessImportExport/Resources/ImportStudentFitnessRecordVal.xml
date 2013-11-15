@@ -5,7 +5,7 @@
     <Detector Name="PrimaryKey1">
       <Field Name="學年度" />
       <Field Name="測驗日期" />
-      <Field Name="學號/座號" />
+      <Field Name="學號" />
     </Detector>
   </DuplicateDetection>
   <FieldList>
@@ -17,9 +17,9 @@
       <Validate AutoCorrect="False" Description="「測驗日期」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
       <Validate AutoCorrect="True" Description="「測驗日期」格式錯誤。" ErrorType="Error" Validator="合法日期" When=""/>
     </Field>
-    <Field Required="True" Name="學號/座號">
-      <Validate AutoCorrect="False" Description="「學號/座號」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
-      <Validate AutoCorrect="False" Description="「學號/座號」長度必須小於12個文字。 " ErrorType="Error" Validator="文字12" When="" />
+    <Field Required="True" Name="學號">
+      <Validate AutoCorrect="False" Description="「學號」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+      <Validate AutoCorrect="False" Description="「學號」長度必須小於12個文字。 " ErrorType="Error" Validator="文字12" When="" />
     </Field>
     <Field Required="False" Name="學校類別">
       <Validate AutoCorrect="False" Description="「學校類別」空白。" ErrorType="Warning" Validator="不可空白" When="" />
