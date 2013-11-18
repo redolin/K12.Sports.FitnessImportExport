@@ -81,7 +81,7 @@
       <Item Value="男" />
       <Item Value="女" />
     </FieldValidator>
-    <RowValidator Name="學號是否存在" Type="COUNSELSTUDCHECKSTUDENTNUMBERSTATUSVAL"/>
+    <RowValidator Name="學號是否存在" Type="K12SPORTFITNESSCHECKSTUDENTNUMBER"/>
     <FieldValidator Name="合法日期" Type="MixDate">
       <!-- Gregorian | Taiwan-->
       <!-- Pattern 中需要 Year,Month,Day 三個 Group。-->

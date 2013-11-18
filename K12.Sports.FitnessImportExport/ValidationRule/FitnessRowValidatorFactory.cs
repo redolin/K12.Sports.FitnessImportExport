@@ -15,7 +15,7 @@ namespace K12.Sports.FitnessImportExport.ValidationRule
         {
             switch (typeName.ToUpper())
             {
-                case "COUNSELSTUDCHECKSTUDENTNUMBERSTATUSVAL":
+                case "K12SPORTFITNESSCHECKSTUDENTNUMBER":
                     return new RowValidator.StudCheckStudentNumberVal();
                 default:
                     return null;
